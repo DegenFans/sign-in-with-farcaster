@@ -10,6 +10,14 @@ import org.web3j.crypto.Sign.SignatureData;
 import org.web3j.utils.Numeric;
 
 public class SignInWithFarcaster {
+	
+	/**
+	 * you have also to verify this address with the fid custody addres:
+	 * e.g. https://docs.neynar.com/reference/fetch-bulk-users
+	 * @param signature
+	 * @param message
+	 * @return
+	 */
 	public static String validateSignatureAndGetAddress(String signature, String message) {
 		SignatureData sd = splitSignature(signature);
 		return recoverAddress(sd, message);
